@@ -30,11 +30,15 @@ const LoginScreen = () => {
     if (!check) {
       setIndicator('email', true);
     } else {
-      setIndicator('email', false);
-      CustomToast({
-        type: 'success',
-        text: 'Success login!',
-      });
+      if (form.password !== '') {
+        setIndicator('email', false);
+        CustomToast({
+          type: 'success',
+          text: 'Success login!',
+        });
+      } else {
+        setIndicator('password', true);
+      }
     }
   };
 
@@ -52,7 +56,10 @@ const LoginScreen = () => {
         />
         <Gap height={30} />
         <CustomInput
+          isError={indicator.password}
+          errorType="field"
           label="Kata Sandi"
+          secureTextEntry
           value={form.password}
           onChangeText={(value) => {
             setForm('password', value);
