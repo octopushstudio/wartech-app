@@ -12,7 +12,13 @@ import CustomHeader from './CustomHeader';
 import CustomCircleButton from './CustomCircleButton';
 import CustomBody from './CustomBody';
 import CustomInput from './CustomInput';
+import CustomSearchBox from './CustomSearchBox';
+import CustomTextArea from './CustomTextArea';
+import CustomSelectedButton from './CustomSelectedButton';
+import CustomStarRating from './CustomStarRating';
+import InputChat from './InputChat';
 
+export * from './Molecules'
 export {
   CustomInputText,
   CustomContainer,
@@ -27,5 +33,10 @@ export {
   CustomHeader,
   CustomCircleButton,
   CustomBody,
+  CustomSearchBox,
   CustomInput,
+  CustomTextArea,
+  CustomSelectedButton,
+  CustomStarRating,
+  InputChat,
 };

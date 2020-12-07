@@ -1,16 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import { colors } from '../../constants/Colors';
+import {colors} from '../../constants/Colors';
 import {fonts} from '../../utils';
 import BtnIconSend from './BtnIconSend';
 import IconOnly from './IconOnly';
 
-const CustomButton = props => {
-  const {type, title, onPress, icon, disable} = props;
+const CustomButton = (props) => {
+  const {type, title, onPress, icon, disable, stylesProps} = props;
   if (type === 'btn-icon-send') {
-    return (
-      <BtnIconSend icon={icon} onPress={onPress} disable={disable} />
-    );
+    return <BtnIconSend icon={icon} onPress={onPress} disable={disable} />;
   }
   if (type === 'icon-only') {
     return <IconOnly icon={icon} onPress={onPress} />;
@@ -23,7 +21,9 @@ const CustomButton = props => {
     );
   }
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container(type)}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.container(type), stylesProps]}>
       <Text style={styles.text(type)}>{title}</Text>
     </TouchableOpacity>
   );
@@ -32,7 +32,7 @@ const CustomButton = props => {
 export default CustomButton;
 
 const styles = StyleSheet.create({
-  container: type => ({
+  container: (type) => ({
     backgroundColor:
       type === 'secondary'
         ? colors.button.secondary.background
@@ -40,24 +40,21 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
   }),
-  text: type => ({
+  text: (type) => ({
     fontSize: 18,
     fontFamily: fonts.primary[600],
     textAlign: 'center',
-    color:
-      type === 'secondary'
-        ? colors.primary
-        : colors.button.secondary.text,
+    color: type === 'secondary' ? colors.primary : colors.button.secondary.text,
   }),
-  disableBg:{
+  disableBg: {
     paddingVertical: 10,
     borderRadius: 10,
-    backgroundColor: colors.button.disable.background
+    backgroundColor: colors.button.disable.background,
   },
-  disableText:{
+  disableText: {
     fontSize: 18,
     fontFamily: fonts.primary[600],
     textAlign: 'center',
-    color: colors.button.disable.text
-  }
+    color: colors.button.disable.text,
+  },
 });

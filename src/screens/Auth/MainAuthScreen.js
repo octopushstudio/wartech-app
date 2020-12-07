@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   logoContainer: {
-    paddingVertical: Platform.OS === 'ios' ? 50 : 30,
+    paddingVertical: 30,
     backgroundColor: colors.white,
   },
 });

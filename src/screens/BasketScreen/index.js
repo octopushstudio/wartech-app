@@ -1,14 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const Homepage = () => {
+const BasketScreen = () => {
     return (
         <View>
-            <Text>Homepage</Text>
+            <Text>Keranjang</Text>
         </View>
     )
 }
 
-export default Homepage
+export default BasketScreen
 
 const styles = StyleSheet.create({})

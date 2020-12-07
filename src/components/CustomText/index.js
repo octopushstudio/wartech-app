@@ -8,26 +8,26 @@ const CustomText = (props) => {
   const getWeight = (params) => {
     switch (params ? params.toLowerCase() : "") {
       case "light":
-        return Fonts.PoppinsLight;
+        return Fonts.NunitoLight;
         break;
       case "regular":
-        return Fonts.PoppinsRegular;
+        return Fonts.NunitoRegular;
         break;
       case "medium":
-        return Fonts.PoppinsMedium;
+        return Fonts.NunitoSemibold;
         break;
       case "semibold":
-        return Fonts.PoppinsSemiBold;
+        return Fonts.NunitoSemibold;
         break;
       case "bold":
-        return Fonts.PoppinsBold;
+        return Fonts.NunitoBold;
         break;
       case "black":
-        return Fonts.PoppinsBlack;
+        return Fonts.NunitoBlack;
         break;
 
       default:
-        return Fonts.PoppinsRegular;
+        return Fonts.NunitoRegular;
         break;
     }
   };
@@ -38,7 +38,7 @@ const CustomText = (props) => {
         return "#000";
         break;
       case "secondcolor":
-        return "#A9A9A9";
+        return '#7D8797';
         break;
       case "thirdcolor":
         return "#ccc";

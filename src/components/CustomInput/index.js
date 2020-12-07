@@ -12,6 +12,7 @@ const CustomInput = (props) => {
     disabled,
     isError,
     errorType,
+    keyboardType,
   } = props;
   const [border, setBorder] = useState(colors.border);
   const onFocusForm = () => {
@@ -37,6 +38,7 @@ const CustomInput = (props) => {
     <View>
       <Text style={styles.label}>{label}</Text>
       <TextInput
+        keyboardType={keyboardType ? keyboardType : 'default'}
         editable={!disabled}
         selectTextOnFocus={!disabled}
         onFocus={onFocusForm}
@@ -56,7 +58,7 @@ const CustomInput = (props) => {
 export default CustomInput;
 
 const styles = StyleSheet.create({
-  input: (isError, border) => ({
+  input: (isError, border, inputType) => ({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: isError ? 'red' : border,

@@ -23,7 +23,7 @@ export default BtnIconSend;
 
 const styles = StyleSheet.create({
   container: disable => ({
-    backgroundColor: disable ? colors.disable : colors.tertiary,
+    backgroundColor: disable ? colors.disable : colors.primary,
     width: 45,
     height: 45,
     borderRadius: 10,

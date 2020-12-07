@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, ScrollView} from 'react-native';
 import {colors} from '../../constants/Colors';
 
-const CustomBody = ({children, type}) => {
+const CustomBody = ({children, type, stylesProps}) => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      style={styles.content(type)}>
+      style={[styles.content(type), stylesProps]}>
       {children}
     </ScrollView>
   );

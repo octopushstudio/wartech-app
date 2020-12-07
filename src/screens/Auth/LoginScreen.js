@@ -10,6 +10,7 @@ import {
   CustomToast,
 } from '../../components';
 import {useForm} from '../../utils';
+import {authenticate} from '../../services/UserServices';
 
 // Constant :
 const validator = require('email-validator');
@@ -30,13 +31,27 @@ const LoginScreen = () => {
     if (!check) {
       setIndicator('email', true);
     } else {
+      // Jika Email valid
       setIndicator('email', false);
-      CustomToast({
-        type: 'success',
-        text: 'Success login!',
-      });
     }
   };
+
+  testLogin = () => {
+    authenticate(form, (callback) => {
+      console.log("ini callback : ", callback);
+      if (callback.status === 'success') {
+        CustomToast({
+          type: 'success',
+          text: 'Success login!',
+        });
+      } else {
+        CustomToast({
+          type: 'danger',
+          text: 'Failed login!',
+        });
+      }
+    });
+  }
 
   return (
     <CustomContainer>
@@ -65,21 +80,10 @@ const LoginScreen = () => {
           //   onPress={() => navigation.navigate('Register')}
         />
         <Gap height={25} />
-        <CustomButton title="Masuk" onPress={() => onLogin()} />
+        <CustomButton title="Masuk" onPress={() => testLogin()} />
       </CustomBody>
     </CustomContainer>
   );
 };
 
 export default LoginScreen;
-
-const styles = StyleSheet.create({
-  logo: {
-    width: 100,
-    height: 100,
-    alignSelf: 'center',
-  },
-  logoContainer: {
-    paddingVertical: 30,
-  },
-});
