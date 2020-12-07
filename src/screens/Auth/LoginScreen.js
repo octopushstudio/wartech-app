@@ -67,7 +67,10 @@ const LoginScreen = () => {
         />
         <Gap height={30} />
         <CustomInput
+          isError={indicator.password}
+          errorType="field"
           label="Kata Sandi"
+          secureTextEntry
           value={form.password}
           onChangeText={(value) => {
             setForm('password', value);
