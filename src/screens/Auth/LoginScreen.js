@@ -83,7 +83,7 @@ const LoginScreen = () => {
           //   onPress={() => navigation.navigate('Register')}
         />
         <Gap height={25} />
-        <CustomButton title="Masuk" onPress={() => testLogin()} />
+        <CustomButton title="Masuk" onPress={() => onLogin()} />
       </CustomBody>
     </CustomContainer>
   );
