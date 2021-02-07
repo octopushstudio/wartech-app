@@ -191,6 +191,12 @@ android {
 }
 
 dependencies {
+        // Pushy SDK for Android
+    implementation 'me.pushy:sdk:1.0.67'
+
+    // Pushy SDK for React Native Android
+    implementation 'me.pushy:sdk-react-native:1.0.15'
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
