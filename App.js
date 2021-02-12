@@ -17,20 +17,20 @@ import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 // After the import statements, and before the Component class
 
 Pushy.setNotificationListener(async (data) => {
-    // Print notification payload data
-    console.log('Received notification: ' + JSON.stringify(data));
+  // Print notification payload data
+  console.log('Received notification: ' + JSON.stringify(data));
 
-    // Notification title
-    let notificationTitle = 'MyApp';
+  // Notification title
+  let notificationTitle = 'MyApp';
 
-    // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
-    let notificationText = data.message || 'Test notification';
+  // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
+  let notificationText = data.message || 'Test notification';
 
-    // Display basic system notification
-    Pushy.notify(notificationTitle, notificationText, data);
+  // Display basic system notification
+  Pushy.notify(notificationTitle, notificationText, data);
 
-    // Clear iOS badge count
-    Pushy.setBadge && Pushy.setBadge(0);
+  // Clear iOS badge count
+  Pushy.setBadge && Pushy.setBadge(0);
 });
 // End Pushy methods
 
@@ -50,9 +50,12 @@ const App = () => {
       .then(async (deviceToken) => {
         // Display an alert with device token
         alert('Pushy device token: ' + deviceToken);
+        console.log('Pushy device token', deviceToken);
 
         // Send the token to your backend server via an HTTP GET request
-        //await fetch('https://your.api.hostname/register/device?token=' + deviceToken);
+        // await fetch(
+        //   'https://your.api.hostname/register/device?token=' + deviceToken,
+        // );
 
         // Succeeded, optionally do something to alert the user
       })
@@ -60,7 +63,7 @@ const App = () => {
         // Handle registration errors
         console.error(err);
       });
-  }
+  };
 
   const PushyListener = () => {
     // Start the Pushy service

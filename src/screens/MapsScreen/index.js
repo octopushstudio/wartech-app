@@ -10,7 +10,7 @@ import {
   Animated,
   Dimensions,
 } from 'react-native';
-import MapView, {Marker, Callout} from 'react-native-maps';
+import MapView, {Marker, Callout, PROVIDER_GOOGLE} from 'react-native-maps';
 import {
   CustomText,
   CustomContainer,
@@ -249,11 +249,11 @@ const MapsScreen = () => {
     return (
       <CustomContainer stylesProps={{paddingTop: -30}}>
         <MapView
-          // provider={PROVIDER_GOOGLE}
+          provider={PROVIDER_GOOGLE}
           // customMapStyle={mapDarkStyle}
           ref={_map}
-          mapType="mutedStandard"
-          style={{width: '100%', height: '100%'}}
+          mapType="satellite"
+          style={{width: '100%', height: '100%', flex: 1}}
           initialRegion={{
             ...mapData.marker[0].coordinate,
             latitudeDelta: 0.0922,

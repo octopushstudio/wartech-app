@@ -2,6 +2,8 @@
   package="com.mywartech">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -94,8 +96,13 @@
       <service android:name="me.pushy.sdk.services.PushyJobService"
           android:permission="android.permission.BIND_JOB_SERVICE"
           android:stopWithTask="false" />
-
       <!-- End Pushy Declarations -->
+
+      <!-- Google Maps -->
+      <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC881yQg7K0jyqhI_fAuYGiLiO5Eamu95s"/>
     </application>
 
 </manifest>
